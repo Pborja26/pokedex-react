@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { GlobalContext, GlobalContextProvider } from './utils/Context/GlobalContext';
+import PokemonList from './components/PokemonList/PokemonList';
 
 function App() {
-  return (
-    <div className="App">
 
-    </div>
+  return (
+    <GlobalContextProvider>
+      <PokemonList />
+    </GlobalContextProvider>
   );
 }
 
