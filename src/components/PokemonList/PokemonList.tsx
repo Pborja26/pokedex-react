@@ -3,6 +3,7 @@ import { useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "../../utils/Context/GlobalContext";
 import { Pokemon } from "../../utils/GlobalTypes/GlobalTypes";
 import PokemonCard from "../PokemonCard/PokemonCard";
+import { ListContainer } from "./PokemonListStyle";
 
 const PokemonList = () => {
   const {offset, setOffset, limit, setLimit, pokemons, setPokemons} = useContext(GlobalContext);
@@ -20,7 +21,7 @@ const PokemonList = () => {
             name: pokemon.name,
             id: pokemon.id,
             types: pokemon.types,
-            sprite: pokemon.sprite
+            sprites: pokemon.sprites
           }));
           setPokemons((prevPokemons) => [...prevPokemons, ...newPokemons]);
         }
@@ -30,13 +31,13 @@ const PokemonList = () => {
     }
     fetchPokemons();
   }, [limit, offset, setPokemons])
-  console.log(pokemons)
+
   return (
-    <>
+    <ListContainer>
       {pokemons.map((pokemon: Pokemon) => (
         <PokemonCard pokemon={pokemon} key={pokemon.id} />
       ))}
-    </>
+    </ListContainer>
   )
 }
 

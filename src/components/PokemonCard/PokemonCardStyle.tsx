@@ -8,10 +8,13 @@ export const CardContainer = styled.div<PokemonCardProps>`
   height: 150px;
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0px 32px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
 
   &:active{
     transform: translate(1px, 1px);
+  }
+  &:hover{
+    cursor: pointer;
   }
 `
 
@@ -37,10 +40,18 @@ export const SpanTag = styled.span`
   text-align: center;
   padding: 0.2rem 0.5rem;
   border-radius: 1rem;
+  font-weight: bold;
 `
 
 export const TypesContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`
+export const Sprite = styled.img`
+  max-width: 100%;
+  height: 90%;
 `

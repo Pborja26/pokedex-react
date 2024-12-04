@@ -1,3 +1,11 @@
+export type Measurement = 
+  `${number}px`
+| `${number}rem`
+| `${number}%`
+| `${number}vw`
+| `${number}vh`
+| Array< `${number}px` | `${number}rem` | `${number}%` | `${number}vw` | `${number}vh` >;
+
 type PokemonType = {
   slot: number;
   type: {
@@ -7,7 +15,7 @@ type PokemonType = {
 }
 
 type PokemonSprites = {
-  others: {
+  other: {
     dream_world: {
       front_default: string;
     }
@@ -18,5 +26,5 @@ export interface Pokemon {
   name: string;
   id: number;
   types: PokemonType[];
-  sprite: PokemonSprites;
+  sprites: PokemonSprites;
 }
