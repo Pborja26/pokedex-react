@@ -34,5 +34,18 @@ export function useFetch() {
         }
     }, [offset, limit]);
 
-    return { getPokemonDetails }
+    const getPokemonSearch = useCallback(async (param: string | number) => {
+        try {
+            const API_URL = `https://pokeapi.co/api/v2/pokemon/${param}`;
+            const request = await axios.get(API_URL);
+            return request.data;
+        } catch (error) {
+            console.error(error);
+        }
+    }, []);
+
+    // TODO criar função para pegar a cadeia de evolução de um pokemon selecionado
+    // através de um fetch pela species evolution_chain
+
+    return { getPokemonDetails, getPokemonSearch }
 }

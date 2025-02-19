@@ -4,7 +4,7 @@ import { GlobalContext } from './utils/GlobalContext';
 import * as comp from "./components/compIndex";
 
 function App() {
-  const { getPokemonDetails } = useFetch();
+  const { getPokemonDetails, getPokemonSearch } = useFetch();
   const {
     setPokemons,
     pokemons,
@@ -21,6 +21,7 @@ function App() {
     }
     fetch()
   }, [limit, offset])
+
   console.log(limit);
   return (
     <div

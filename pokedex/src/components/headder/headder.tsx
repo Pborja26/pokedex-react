@@ -1,3 +1,5 @@
+import { Input } from "../compIndex";
+import { useState } from "react";
 import * as styled from "./headder.style";
 
 interface HeadderProps {
@@ -10,7 +12,7 @@ const Headder = ({
     return (
         <styled.Container>
             <styled.UpperContainer>
-
+                <Input value={""} setValue={(e) => console.log(e)} />
             </styled.UpperContainer>
             {children}
             <styled.LowerContainer>
