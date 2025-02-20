@@ -11,30 +11,35 @@ const PokemonList = ({
 }: PokemonListProps) => {
     const listRef = useRef<HTMLDivElement>(null)
 
-    const { limit, setLimit } = useContext(GlobalContext);
+    const { limit, setLimit, setOffset } = useContext(GlobalContext);
 
     useEffect(() => {
         const handleScroll = () => {
             if (listRef.current) {
-                const current = listRef.current.scrollTop;
-                const total = listRef.current.scrollHeight;
-                if (current >= total / 2) {
-                    setLimit(prev => prev + 20);
+                const div = listRef.current;
+                const current = div.scrollTop;
+                const total = div.scrollHeight; 
+                const visible = div.clientHeight; 
+    
+                if (current + visible >= total - 10) {
+                    setLimit(prev => prev + 8);
+                    setOffset(limit)
                 }
             }
         };
-
+    
         const div = listRef.current;
         if (div) {
             div.addEventListener("scroll", handleScroll);
         }
-
+    
         return () => {
             if (div) {
                 div.removeEventListener("scroll", handleScroll);
             }
         };
     }, []);
+    
 
     return (
         <styled.ListContainer

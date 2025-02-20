@@ -16,7 +16,7 @@ export const Container = styled.div`
 
 export const UpperContainer = styled.div`
     width: 100%;
-    height: 80px;
+    height: 60px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -26,7 +26,7 @@ export const UpperContainer = styled.div`
 
 export const LowerContainer = styled.div`
     width: 100%;
-    height: 40px;
+    height: 30px;
     display: flex;
     flex-direction: row;
     align-items: center;

@@ -4,7 +4,7 @@ import { GlobalContext } from './utils/GlobalContext';
 import * as comp from "./components/compIndex";
 
 function App() {
-  const { getPokemonDetails, getPokemonSearch } = useFetch();
+  const { getPokemonDetails, getEvolutionChain} = useFetch();
   const {
     setPokemons,
     pokemons,
@@ -16,7 +16,7 @@ function App() {
     const fetch = async () => {
       const request = await getPokemonDetails(offset, limit);
       if (request) {
-        setPokemons(prev => (request))
+        setPokemons(prev => [...prev, ...request])
       }
     }
     fetch()
@@ -41,7 +41,7 @@ function App() {
             <comp.PokemonCard 
               key={pokemon.id} 
               pokemon={pokemon} 
-              onClick={() => console.log(pokemon)}
+              onClick={() => getEvolutionChain(pokemon)}
             />
           ))}
         </comp.PokemonList>

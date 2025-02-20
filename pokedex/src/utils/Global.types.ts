@@ -56,6 +56,11 @@ interface Iabilities {
     }
 }
 
+interface Ispecies {
+    name: string;
+    url: string;
+}
+
 export interface IPokemon {
     id: number;
     name:string;
@@ -67,4 +72,5 @@ export interface IPokemon {
     moves: Imove[];
     cries: Icries;
     abilities: Iabilities[];
+    species: Ispecies;
 }

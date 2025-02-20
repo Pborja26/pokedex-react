@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useCallback, useContext } from "react";
 import { GlobalContext } from "./GlobalContext";
+import { IPokemon } from "./Global.types";
 
 interface IPokemonList {
     name: string;
@@ -47,5 +48,15 @@ export function useFetch() {
     // TODO criar função para pegar a cadeia de evolução de um pokemon selecionado
     // através de um fetch pela species evolution_chain
 
-    return { getPokemonDetails, getPokemonSearch }
+    const getEvolutionChain = async (pokemon: IPokemon) => {
+        try {
+            const fetchSpecies = await axios.get(pokemon.species.url);
+            const fetchEvoChain = await axios.get(fetchSpecies.data.evolution_chain.url);
+            return fetchEvoChain.data;
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    return { getPokemonDetails, getPokemonSearch, getEvolutionChain }
 }
