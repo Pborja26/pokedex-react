@@ -45,9 +45,6 @@ export function useFetch() {
         }
     }, []);
 
-    // TODO criar função para pegar a cadeia de evolução de um pokemon selecionado
-    // através de um fetch pela species evolution_chain
-
     const getEvolutionChain = async (pokemon: IPokemon) => {
         try {
             const fetchSpecies = await axios.get(pokemon.species.url);

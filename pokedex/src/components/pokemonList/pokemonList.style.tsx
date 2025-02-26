@@ -10,4 +10,16 @@ export const ListContainer = styled.div`
     overflow: auto;
     padding: 1rem;
     border-radius: 8px;
+
+    @media (max-width: 1080px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    } 
+
+    @media (max-width: 810px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 530px) {
+        grid-template-columns: 1fr;
+    }
 `

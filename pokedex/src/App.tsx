@@ -22,7 +22,7 @@ function App() {
     fetch()
   }, [limit, offset])
 
-  console.log(limit);
+
   return (
     <div
       className="App"
@@ -31,21 +31,14 @@ function App() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "lightgrey",
+        backgroundColor: "lightgray",
         height: "100vh",
         width: "100vw"
       }}>
-      <comp.Headder>
-        <comp.PokemonList> 
-          {pokemons.map((pokemon) => (
-            <comp.PokemonCard 
-              key={pokemon.id} 
-              pokemon={pokemon} 
-              onClick={() => getEvolutionChain(pokemon)}
-            />
-          ))}
-        </comp.PokemonList>
-      </comp.Headder>
+        <div style={{width: "1000px", backgroundColor: "white"}}>
+
+          <comp.StatusBar value={20} title='Attack'/>
+        </div>
     </div>
   );
 }
