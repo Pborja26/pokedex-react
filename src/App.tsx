@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
+import { keyframes } from '@emotion/react';
+import PokemonList from './components/pokemonList/pokemonList';
+
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <CatchingPokemonIcon sx={{
+        animation: `${spin} 1s linear infinite`,
+        fontSize: 40, 
+      }}/> */}
+      <PokemonList/>
     </div>
   );
 }
