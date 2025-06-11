@@ -6,7 +6,7 @@ import { GlobalContext } from "../../contexts/globalContext";
 import { usePokemonList } from "../../hooks/usePokemonList";
 
 const PokemonList = () => {
-    const { pokemons, setPokemons, offset, limit, setSelectedPoke, selectedPoke } = useContext(GlobalContext);
+    const { pokemons, setPokemons, offset, limit } = useContext(GlobalContext);
     const { pokemonNamesURLsList, pokemonDetails } = usePokemonList();
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const PokemonList = () => {
     return (
         <ListContainer>
             {Array.isArray(pokemons) ? pokemons.sort((a, b) => a.id - b.id).map((pokemon) => (
-                <PokemonCard key={pokemon.id} pokemon={pokemon} onClick={() => setSelectedPoke(pokemon)} />
+                <PokemonCard key={pokemon.id} pokemon={pokemon} />
             )) : null}
         </ListContainer>
     )

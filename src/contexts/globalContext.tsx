@@ -12,8 +12,6 @@ interface IGlobalContext {
     setLimit: React.Dispatch<React.SetStateAction<number>>;
     filter: string;
     setFilter: React.Dispatch<React.SetStateAction<string>>;
-    selectedPoke: IPokemon | null;
-    setSelectedPoke: React.Dispatch<React.SetStateAction<IPokemon | null>>;
 }
 
 export const GlobalContext = createContext({} as IGlobalContext);
@@ -25,7 +23,6 @@ export const GlobalContextProvider: React.FC<{
     const [offset, setOffset] = useState<number>(0);
     const [limit, setLimit] = useState<number>(151);
     const [pokemons, setPokemons] = useState<IPokemon[]>([]);
-    const [selectedPoke, setSelectedPoke] = useState<IPokemon | null>(null);
     const [filter, setFilter] = useState<string>("");
 
     return (
@@ -40,9 +37,7 @@ export const GlobalContextProvider: React.FC<{
                 limit,
                 setLimit,
                 filter,
-                setFilter,
-                selectedPoke,
-                setSelectedPoke
+                setFilter
             }}
         >
             {children}
