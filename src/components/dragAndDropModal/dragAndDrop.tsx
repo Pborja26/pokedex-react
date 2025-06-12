@@ -1,7 +1,7 @@
-import { DragNDropContainer } from "./dragndrop.style";
+import { DragNDropContainer } from "./dragAndDrop.style";
 import { useState, useRef } from "react";
 
-const DragNDropModal = () => {
+const DragAndDropModal = () => {
     const [position, setPosition] = useState({ x: 100, y: 100 });
     const dragging = useRef(false);
     const offset = useRef({ x: 0, y: 0 });
@@ -39,4 +39,4 @@ const DragNDropModal = () => {
     )
 };
 
-export default DragNDropModal;
+export default DragAndDropModal;

@@ -4,21 +4,22 @@ import Image from "../../image/image";
 import { PokeDetailsCardProps } from "./pokeDetailsCard.types";
 
 const PokeDetailsCard = ({
-    pokemon
+    pokemon,
+    setPokemon,
+    onClose
 }: PokeDetailsCardProps) => {
+    if (!pokemon) return;
     return (
-        pokemon ? (
-            <Container 
-                direction="row"
-                background_color="lightgray"
-                style={{ boxShadow: "0px 4px 8px 0px #000" }}
-            >
-                <Container direction="column">
-                    <Badge label={pokemon.name} />
-                    <Image src={pokemon.sprites.other.dream_world.front_default} />
-                </Container>
+        <Container 
+            direction="row"
+            background_color="lightgray"
+            style={{ boxShadow: "0px 4px 8px 0px #000" }}
+        >
+            <Container direction="column">
+                <Badge label={pokemon.name} />
+                <Image src={pokemon.sprites.other.dream_world.front_default} />
             </Container>
-        ) : null
+        </Container>
     )
 };
 
