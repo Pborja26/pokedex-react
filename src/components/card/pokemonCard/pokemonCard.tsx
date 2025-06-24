@@ -6,7 +6,7 @@ import { UsePokeTypeColor } from "../../../utils/usePokeTypesColors";
 
 interface PokemonCardProps {
     pokemon: IPokemon;
-    onClick?: () => void;
+    onClick: () => void;
 }
 
 const PokemonCard = ({ pokemon, onClick }: PokemonCardProps) => {

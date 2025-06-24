@@ -8,8 +8,7 @@ type Itab = {
 
 export interface TabsProps {
     tabs: Itab[];
-    selectedTab: number;
-    setSelectedTab: React.Dispatch<React.SetStateAction<number>>;
+    selectedTab: (tab: number) => void;
 }
 
 export interface TabsStyleProps {

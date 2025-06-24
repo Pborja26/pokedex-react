@@ -1,6 +1,7 @@
 // import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
 import { keyframes } from '@emotion/react';
 import { useState, useRef } from 'react';
+import PokemonList from './components/pokemonList/pokemonList';
 
 const spin = keyframes`
   from {
@@ -43,7 +44,7 @@ function App() {
         animation: `${spin} 1s linear infinite`,
         fontSize: 40, 
       }}/> */}
-      <div
+      {/* <div
         style={{
           width: 100,
           height: 100,
@@ -60,7 +61,8 @@ function App() {
         onMouseLeave={handleMouseUp}
       >
 
-      </div>
+      </div> */}
+      <PokemonList />
     </div>
   );
 }
